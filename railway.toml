@@ -1,0 +1,17 @@
+[railway]
+template = "python-streamlit"
+
+[build]
+builder = "NIXPACKS"
+
+[nixpacks]
+pythonVersion = "312"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[start]
+command = "pip install -r requirements.txt && streamlit run app.py --server.port=$PORT --server.address=0.0.0.0"
