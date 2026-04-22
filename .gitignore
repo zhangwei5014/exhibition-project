@@ -1,0 +1,4 @@
+epms.db
+__pycache__/
+*.pyc
+.streamlit/
